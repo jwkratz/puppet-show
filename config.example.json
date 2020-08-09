@@ -1,0 +1,14 @@
+{
+  "global": {
+    "find": "Send an email when this text is found on the page"
+  },
+  "scrapes": [
+    {
+      "url": "http://example.com",
+      "find": "Optional - send an email when this text is found instead"
+    },
+    {
+      "url": "http://example.com"
+    }
+  ]
+}
