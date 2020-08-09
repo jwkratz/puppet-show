@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/jwkratz/puppet-show/issues"
   },
-  "homepage": "https://github.com/jwkratz/puppet-show#readme"
+  "homepage": "https://github.com/jwkratz/puppet-show#readme",
+  "dependencies": {
+    "chrome-aws-lambda": "^5.2.0",
+    "puppeteer-core": "^5.2.1"
+  },
+  "devDependencies": {
+    "puppeteer": "^5.2.1"
+  }
 }
