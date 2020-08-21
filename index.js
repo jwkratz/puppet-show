@@ -14,9 +14,10 @@ const config = require("./config.json");
 
       const title = await page.title();
       const find = scrape.find || config.global.find;
+      const findMinCount = scrape.findMinCount || 1;
       const foundElements = await page.$$(find);
 
-      if (foundElements.length) {
+      if (foundElements.length >= findMinCount) {
         const foundMessage = `✅ ${scrape.url}`;
         await nodemailer.send({ subject: title, messageText: foundMessage });
         console.log(foundMessage);
