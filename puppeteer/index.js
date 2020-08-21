@@ -49,5 +49,8 @@ const addGotoAndWait = async (page) => {
   const gotoOptions = puppeteerConfig.page.goto.options;
 
   // Add a helper function to visit a URL and wait for page load
-  page.gotoAndWait = async (url) => page.goto(url, gotoOptions);
+  page.gotoAndWait = async (url) => {
+    await page.goto(url, gotoOptions);
+    await page.keyboard.press("Escape");
+  };
 };
