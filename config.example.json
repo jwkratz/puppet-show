@@ -5,7 +5,8 @@
   "scrapes": [
     {
       "url": "http://example.com",
-      "find": "Optional - send an email when this text is found instead"
+      "find": "Optional - send an email when this text is found instead",
+      "findMinCount": 2
     },
     {
       "url": "http://example.com"
