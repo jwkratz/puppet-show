@@ -1,9 +1,12 @@
 require("dotenv").config();
+const winston = require("./winston");
 const puppeteer = require("./puppeteer");
 const nodemailer = require("./nodemailer");
 const config = require("./config.json");
 
 (async () => {
+  const logger = await winston.createLogger();
+
   try {
     const page = await puppeteer.initializePage();
 
@@ -20,13 +23,13 @@ const config = require("./config.json");
       if (foundElements.length >= findMinCount) {
         const foundMessage = `✅ ${scrape.url}`;
         await nodemailer.send({ subject: title, messageText: foundMessage });
-        console.log(foundMessage);
+        logger.info(foundMessage);
       } else {
-        console.log(`❌ ${url}`);
+        logger.info(`❌ ${url}`);
       }
     }
   } catch (ex) {
-    console.log(ex);
+    logger.error(ex);
   } finally {
     process.exit();
   }
