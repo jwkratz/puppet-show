@@ -1,11 +1,11 @@
 {
   "global": {
-    "find": "Send an email when this text is found on the page"
+    "find": "Send an email when this CSS selector is found on the page"
   },
   "scrapes": [
     {
       "url": "http://example.com",
-      "find": "Optional - send an email when this text is found instead",
+      "find": "Optional - send an email when this CSS selector is found instead",
       "findMinCount": 2
     },
     {

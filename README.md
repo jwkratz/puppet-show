@@ -1,6 +1,6 @@
 # puppet-show
 
-Visits pages using puppeteer and sends an email when text is found.
+Visits websites using puppeteer and sends emails and/or SMS texts when CSS selectors are found on the page.
 
 ## Setup
 
@@ -12,6 +12,10 @@ MAIL_USER=smtp-username
 MAIL_PASS=smtp-password
 MAIL_TO=to@example.com
 MAIL_FROM=from@example.com
+TWILIO_ACCOUNT_SID=twilio-sid
+TWILIO_AUTH_TOKEN=twilio-token
+TWILIO_TO=5555555555
+TWILIO_FROM=5555555555
 ```
 
 Rename `config.example.json` to `config.json` and update the values with your target URLs and find text.
